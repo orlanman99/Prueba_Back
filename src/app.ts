@@ -5,6 +5,7 @@ import express from 'express'
 import logger from 'morgan';
 import helmet from 'helmet';
 import indexRouter from './routes/index.router';
+import cors from 'cors';
 
 /**
  * App Variables
@@ -22,6 +23,7 @@ app.use(actuator({
 }));
 app.use(helmet());
 app.use(express.json());
+app.use(cors());
 app.use(express.urlencoded({extended: false}));
 
 
