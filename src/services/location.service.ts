@@ -66,7 +66,7 @@ class LocationService {
     async queryGetLocations(): Promise<any> {
         try {
             const response: QueryResult = await pool.query('SELECT * FROM location');
-            return response.rows[0];
+            return response.rows;
         } catch (error) {
             return Promise.reject(error);
         }
